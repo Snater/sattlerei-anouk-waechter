@@ -30,7 +30,7 @@
 				<a href="menschen">
 					<div class="card-img-top">
 						<img class="img-fluid" src="img/placeholder.png" aria-hidden="true">
-						<div class="flip-container position-absolute">
+						<div class="flip-container initial">
 							<div class="flipper">
 								<div class="front">
 									<img class="rounded-circle img-fluid" src="img/20170818-IMG_2038-2.jpg" alt="Lederwaren für Menschen">
@@ -50,7 +50,7 @@
 				<a href="pferde">
 				<div class="card-img-top">
 					<img class="img-fluid" src="img/placeholder.png" aria-hidden="true">
-					<div class="flip-container position-absolute">
+					<div class="flip-container initial">
 						<div class="flipper">
 							<div class="front">
 								<img class="rounded-circle img-fluid" src="img/180730104919-00004.jpg" alt="Lederwaren für Pferde">
@@ -70,7 +70,7 @@
 				<a href="hunde">
 					<div class="card-img-top">
 						<img class="img-fluid" src="img/placeholder.png" aria-hidden="true">
-						<div class="flip-container position-absolute">
+						<div class="flip-container initial">
 							<div class="flipper">
 								<div class="front">
 									<img class="rounded-circle img-fluid" src="img/180730104726-00003.jpg" alt="Lederwaren für Hunde">
@@ -91,7 +91,7 @@
 </section>
 
 <div class="row no-gutters">
-	<div class="col-md-12"><img src="img/089771.jpg" class="img-fluid"></div>
+	<div class="col-md-12"><img src="img/089771.jpg" class="img-fluid w-100"></div>
 </div>
 
 <section id="about">
@@ -120,7 +120,7 @@
 </section>
 
 <div class="row no-gutters">
-	<div class="col-md-12"><img src="img/werkstatt-1.jpg" class="img-fluid"></div>
+	<div class="col-md-12"><img src="img/werkstatt-1.jpg" class="img-fluid w-100"></div>
 </div>
 
 <section id="workshop">
@@ -170,7 +170,7 @@
 
 
 <div class="row no-gutters">
-	<div class="col-md-12"><img src="img/090611-2.jpg" class="img-fluid"></div>
+	<div class="col-md-12"><img src="img/090611-2.jpg" class="img-fluid w-100"></div>
 </div>
 
 <?php include $TEMPLATE_DIR . 'contact.php'; ?>
