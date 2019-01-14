@@ -415,56 +415,55 @@ section {
 #products {
 	padding-top: 5rem;
 
-	/* entire container, keeps perspective */
-	.flip-container {
-		perspective: 1000px;
-		transform-style: preserve-3d;
-	}
-	/*  UPDATED! flip the pane when hovered */
-	.flip-container:hover .back {
-		transform: rotateY(0deg);
-	}
-	.flip-container:hover .front {
-		transform: rotateY(180deg);
-	}
-
-	.flip-container, .front, .back {
-		width: 100%;
+	@mixin flipItemHeight {
 		height: 480px;
+		width: 100%;
 	}
 
-	/* flip speed goes here */
-	.flipper {
-		transition: 0.6s;
-		transform-style: preserve-3d;
-
-		position: relative;
-	}
-
-	/* hide back of pane during swap */
-	.front, .back {
-		backface-visibility: hidden;
-		transition: 0.6s;
-		transform-style: preserve-3d;
-
+	.flip-container {
+		@include flipItemHeight;
+		perspective: 1000px;
 		position: absolute;
 		top: 0;
-		left: 0;
-	}
+		transform-style: preserve-3d;
 
-	/*  UPDATED! front pane, placed above back */
-	.front {
-		z-index: 2;
-		transform: rotateY(0deg);
-	}
+		.flipper {
+			position: relative;
+			transition: 0.6s;
+			transform-style: preserve-3d;
 
-	/* back, initially hidden pane */
-	.back {
-		transform: rotateY(-180deg);
-	}
+			.front,
+			.back {
+				@include flipItemHeight;
+				backface-visibility: hidden;
+				left: 0;
+				position: absolute;
+				top: 0;
+				transition: 0.6s;
+				transform-style: preserve-3d;
 
-	.position-absolute {
-		top: 0;
+				&.back {
+					transform: rotateY(-180deg);
+				}
+
+				&.front {
+					transform: rotateY(0deg);
+					z-index: 2;
+				}
+			}
+		}
+
+		&:hover,
+		&.initial {
+			.flipper {
+				.back {
+					transform: rotateY(0deg);
+				}
+				.front {
+					transform: rotateY(180deg);
+				}
+			}
+		}
 	}
 }
 

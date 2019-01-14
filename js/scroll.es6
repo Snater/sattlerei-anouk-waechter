@@ -31,6 +31,27 @@
 		});
 	};
 
+	const initialFlip = ($flipContainers, i) => {
+		$flipContainers.eq(i).removeClass('initial');
+		if ($flipContainers.length > i) {
+			setTimeout(() => initialFlip($flipContainers, i + 1), 80);
+		}
+	};
+
+	const initialProductsFlip = ($flipContainers) => {
+		if (!$flipContainers.length) {
+			return;
+		}
+
+		let waypoint = new Waypoint.Inview({
+			element: $flipContainers.find('.rounded-circle').get(0),
+			entered: () => {
+				waypoint.destroy();
+				initialFlip($flipContainers, 0);
+			},
+		});
+	};
+
 	$(() => {
 		attachSmoothScroll($('a[href*="#"]:not([href="#"]):not([data-toggle="collapse"])'));
 
@@ -50,5 +71,7 @@
 		$('.collapse').on('shown.bs.collapse', (e) => {
 			scrollTo($(e.target));
 		});
+
+		initialProductsFlip($('.flip-container'));
 	});
 }
