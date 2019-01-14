@@ -1,0 +1,41 @@
+{
+	"title": "Sattlerei Anouk Wächter",
+	"name": "waechter-bootstrap",
+	"version": "1.0.0",
+	"description": "Sattlerei Anouk Wächter's HTML theme for Bootstrap.",
+	"keywords": [
+		"css",
+		"sass",
+		"html",
+		"responsive",
+		"theme",
+		"template"
+	],
+	"homepage": "http://sattlerei-anouk-wächter.de",
+	"bugs": {
+		"email": "info@attlerwei-anouk-wächter.de"
+	},
+	"license": "MIT",
+	"author": "snater.com",
+	"repository": {
+		"type": "git"
+	},
+	"dependencies": {
+		"bootstrap": "^4.1.1",
+		"font-awesome": "4.7.0",
+		"jquery": "^3.2.1",
+		"jquery.easing": "^1.4.1",
+		"popper.js": "^1.11.1",
+		"waypoints": "^4.0.1"
+	},
+	"devDependencies": {
+		"browser-sync": "2.18.13",
+		"gulp": "^3.9.1",
+		"gulp-clean-css": "3.7.0",
+		"gulp-header": "1.8.9",
+		"gulp-rename": "^1.2.2",
+		"gulp-sass": "^3.1.0",
+		"gulp-uglify": "3.0.0",
+		"node-sass-import-once": "^1.2.0"
+	}
+}

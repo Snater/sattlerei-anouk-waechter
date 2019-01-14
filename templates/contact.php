@@ -1,0 +1,68 @@
+<section id="contact">
+	<div class="container">
+		<h2>Kontakt</h2>
+		<div class="row">
+			<div class="col-md-7">
+				<?php include $TEMPLATE_DIR . 'contact-form.php'; ?>
+			</div>
+
+			<div class="col-md-5 col-lg-4 offset-lg-1">
+				<div class="row">
+
+					<div class="col-12 contact-info">
+						<hr class="d-md-none">
+
+						<div class="mb-2">
+							Anouk Wächter<br>
+							Sattlermeisterin<br>
+							Kirchgasse 6<br>
+							97486 Königsberg i.Bay.
+						</div>
+						<div class="mb-2">
+							<i class="fa fa-phone mr-1" aria-hidden="true"></i>0151&nbsp;64&nbsp;32&nbsp;48&nbsp;29
+						</div>
+						<div>
+							<i class="fa fa-envelope-o mr-1" aria-hidden="true"></i><a href="mailto:info@sattlerei-anouk-wächter.de">info@sattlerei-anouk-wächter.de</a>
+						</div>
+					</div>
+
+					<div class="col-12 mt-4 order-md-first mt-md-0 mb-md-2">
+						<div class="row">
+							<div class="col-12">
+								<img src="img/090599.jpg" class="img-fluid">
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+	</div>
+</section>
+
+<div>
+	<iframe
+		src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d769.2436062780594!2d10.568437829262212!3d50.081490859297666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTDCsDA0JzUzLjQiTiAxMMKwMzQnMDguNCJF!5e1!3m2!1sen!2sde!4v1538056515692"
+		width="100%" height="300" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<section class="mt-0 pt-0">
+	<div class="container">
+
+		<div class="row">
+			<div class="col-12 d-none d-md-block mt-5">
+				<hr>
+			</div>
+			<div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2 mt-4">
+				<p class="quote">
+					„Wir, die guten Willens sind, geführt von Ahnungslosen versuchen für die
+					Undankbaren das Unmögliche zu vollbringen. Wir haben so viel mit so wenig so
+					lange versucht, dass wir jetzt qualifiziert sind, fast alles mit nichts zu
+					bewerkstelligen.“
+				</p>
+			</div>
+		</div>
+
+	</div>
+</section>

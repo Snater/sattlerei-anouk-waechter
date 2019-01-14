@@ -1,0 +1,4 @@
+RewriteEngine On
+
+RewriteRule ^([^/]+)\.php?$ index.php?exe=$1 [QSA]
+RewriteRule ^([^/]+)$ index.php?exe=$1 [QSA]
