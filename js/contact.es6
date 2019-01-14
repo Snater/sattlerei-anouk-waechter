@@ -2,11 +2,11 @@
 	'use strict';
 
 	$('#contact').find('form').on('submit', function(e) {
-		var $form = $(this);
-		var $fieldset = $form.find('fieldset');
-		var $loading = $form.find('.loading');
-		var $message = $form.find('.status-message');
-		var deferred = $.Deferred();
+		const $form = $(this);
+		const $fieldset = $form.find('fieldset');
+		const $loading = $form.find('.loading');
+		const $message = $form.find('.status-message');
+		const deferred = $.Deferred();
 
 		if (!$message.is(':visible')) {
 			deferred.resolve();
@@ -28,7 +28,7 @@
 				type: 'POST',
 				dataType: 'json'
 			}).done(function(response) {
-				var messages = [];
+				let messages = [];
 
 				$loading.fadeOut();
 				$fieldset.removeProp('readonly');

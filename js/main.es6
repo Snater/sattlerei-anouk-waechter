@@ -1,11 +1,11 @@
 (function($) {
 	'use strict';
 
-	var $window = $(window);
-	var $mainNav = $('#mainNav');
+	const $window = $(window);
+	const $mainNav = $('#mainNav');
 
 	function getNavbarHeight() {
-		var $navbarExt = $mainNav.find('.navbar-collapse.show');
+		const $navbarExt = $mainNav.find('.navbar-collapse.show');
 		return $mainNav.outerHeight() - ($navbarExt.outerHeight() || 0);
 	}
 
@@ -21,7 +21,7 @@
 			location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '')
 			&& location.hostname == this.hostname
 		) {
-			var $target = $(this.hash);
+			let $target = $(this.hash);
 			$target = $target.length ? $target : $('[name=' + this.hash.slice(1) + ']');
 
 			if (!$target.length) {
@@ -64,7 +64,7 @@
 
 		if ($('#mainNav').hasClass('navbar-index')) {
 
-		var waypoint = new Waypoint.Inview({
+		const waypoint = new Waypoint.Inview({
 			element: $('.nav-scroller').get(0),
 			enter: function(direction) {
 				if (direction === 'up') {
@@ -98,10 +98,10 @@
 
 		}
 
-		var intervals = {};
+		let intervals = {};
 
 		$('.product-images').each(function() {
-			var self = this;
+			const self = this;
 			intervals[this] = setInterval(function() {
 				nextImage($(self).find('.product-image-thumbnail.active'));
 			}, 5000);
@@ -112,7 +112,7 @@
 
 		function nextImage($active) {
 			$active.removeClass('active');
-			var $next = $active.next();
+			let $next = $active.next();
 			if (!$next.length) {
 				$next = $active.parent().children().first();
 			}
@@ -124,10 +124,10 @@
 				return false;
 			}
 
-			var $target = $(e.target).closest('a');
-			var $images = $target.closest('.product-images');
-			var $image = $images.find('.product-image');
-			var $img = $image.children();
+			const $target = $(e.target).closest('a');
+			const $images = $target.closest('.product-images');
+			const $image = $images.find('.product-image');
+			const $img = $image.children();
 
 			$img.stop(true, true).fadeOut('fast').promise().done(function() {
 				$img.attr('src', $target.attr('href')).fadeIn('fast');
@@ -140,8 +140,8 @@
 		});
 
 		$('.product-images-more a').on('click', function(e) {
-			var $more = $(e.target).parent();
-			var $images = $more.closest('.product-images');
+			const $more = $(e.target).parent();
+			const $images = $more.closest('.product-images');
 			$images.find('.product-images-thumbnails').hide().removeClass('d-none').slideDown({
 				easing: 'easeInExpo'
 			});

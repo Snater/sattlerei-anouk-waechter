@@ -1,5 +1,5 @@
 .idea
 css
-js/*.min.js
+js/*.js
 node_modules
 vendor

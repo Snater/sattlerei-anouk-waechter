@@ -1,5 +1,6 @@
 const { src, dest, series, parallel } = require('gulp');
 const del = require('del');
+const babel = require('gulp-babel');
 const cleanCSS = require('gulp-clean-css');
 const concat = require('gulp-concat');
 const rename = require('gulp-rename');
@@ -10,7 +11,7 @@ const merge = require('merge-stream');
 const clean = () =>
 	del([
 		'css/*',
-		'js/*.min.js',
+		'js/*.js',
 		'vendor/**/*',
 	]);
 
@@ -25,6 +26,14 @@ const minifyCss = () =>
 		.pipe(rename({suffix: '.min'}))
 		.pipe(dest('css'));
 
+const compileJs = () =>
+	src([
+		'js/*.es6'
+	])
+		.pipe(babel({presets: ['@babel/env']}))
+		.pipe(rename({extname: '.js'}))
+		.pipe(dest('js'));
+
 const minifyJs = () =>
 	src(['js/*.js', '!js/*.min.js'])
 		.pipe(uglify())
@@ -33,6 +42,11 @@ const minifyJs = () =>
 
 const copyFiles = () =>
 	merge(
+		src([
+			'node_modules/@babel/polyfill/dist/*',
+		])
+			.pipe(dest('vendor/@babel/polyfill')),
+
 		src([
 			'node_modules/bootstrap/dist/**/*',
 			'!**/*.map'
@@ -65,4 +79,11 @@ const copyFiles = () =>
 			.pipe(dest('vendor/waypoints'))
 	);
 
-exports.default = series(clean, parallel(series(compileSass, minifyCss), minifyJs, copyFiles));
+exports.default = series(
+	clean,
+	parallel(
+		series(compileSass, minifyCss),
+		series(compileJs, minifyJs),
+		copyFiles
+	)
+);

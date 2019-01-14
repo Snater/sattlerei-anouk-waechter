@@ -133,6 +133,7 @@
 <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 <script src="vendor/waypoints/jquery.waypoints.min.js"></script>
 <script src="vendor/waypoints/shortcuts/inview.min.js"></script>
+<script src="vendor/@babel/polyfill/polyfill.min.js"></script>
 
 <script src="js/main.js"></script>
 <script src="js/contact.js"></script>
