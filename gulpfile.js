@@ -31,7 +31,7 @@ const compileJs = () =>
 		'js/*.es6'
 	])
 		.pipe(babel({presets: ['@babel/env']}))
-		.pipe(rename({extname: '.js'}))
+		.pipe(concat('main.js'))
 		.pipe(dest('js'));
 
 const minifyJs = () =>
