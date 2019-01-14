@@ -15,7 +15,7 @@
 </head>
 
 
-<body id="page-top" class="<?= $exe; ?>" data-spy="scroll" data-target="#mainNav" data-offset="200">
+<body id="page-top" class="<?= $exe; ?>"<?= $exe === 'index' ? ' data-spy="scroll" data-target="#mainNav" data-offset="200"' : '' ?>>
 
 <?php include $TEMPLATE_DIR . 'nav.php'; ?>
 
