@@ -7,7 +7,6 @@
 
 		<h2 class="text-center mt-sm-4">Für Pferde</h2>
 
-
 		<div class="row">
 
 			<div class="col-12 mb-5">
@@ -20,7 +19,7 @@
 						</div>
 					</div>
 					<div class="col-sm-6 col-md-4">
-						<img class="img-fluid" src="img/pferde/IMG_2825.jpg">
+						<img class="img-fluid" src="img/pferde/093251.jpg">
 					</div>
 				</div>
 			</div>
@@ -35,7 +34,7 @@
 						</div>
 					</div>
 					<div class="col-sm-6 col-md-4 order-md-first offset-lg-1">
-						<img class="img-fluid" src="img/pferde/093251.jpg">
+						<img class="img-fluid" src="img/pferde/IMG_2825.jpg">
 					</div>
 				</div>
 			</div>
@@ -45,7 +44,7 @@
 					<div class="col-sm-6 col-md-6 d-flex align-items-center mb-3 mb-sm-0 offset-md-2 col-lg-5">
 						<div>
 							Anpassen von Sätteln aller Fabrikate und Polsterarbeiten vor Ort biete ich
-							ebenso an wie Polsterarbeiten jeglicher Art rund ums Pferd.
+							ebenso an wie Maßanfertigungen jeglicher Art rund ums Pferd.
 						</div>
 					</div>
 					<div class="col-sm-6 col-md-4">
