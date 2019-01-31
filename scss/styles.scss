@@ -34,7 +34,7 @@ a {
 html,
 body {
 	height: 100%;
-	font-family: 'Raleway', sans-serif;
+	font-family: $font-text;
 }
 
 body {
@@ -64,7 +64,7 @@ body {
 #mainNav {
 	background-color: #ffffff;
 	box-shadow: rgba(0,0,0,0.3) 0 2px 4px;
-	font-family: 'Raleway', sans-serif;
+	font-family: $font-text;
 	font-size: 1rem;
 	margin-bottom: 0;
 	padding: 0;
@@ -222,14 +222,14 @@ body {
 
 h1 {
 	color: #ffffff;
-	font-family: 'Alex Brush', cursive;
+	font-family: $font-heading;
 	font-size: 5rem;
 	line-height: 1;
 	margin-bottom: -1rem;
 	text-align: center;
 
 	.h1-small {
-		font-family: 'Raleway', sans-serif;
+		font-family: $font-text;
 		font-size: 1.5rem;
 	}
 
@@ -242,7 +242,7 @@ h1 {
 }
 
 h2 {
-	font-family: 'Alex Brush', cursive;
+	font-family: $font-heading;
 	font-size: 2.5rem;
 
 	@include media-breakpoint-up(md) {
@@ -277,7 +277,7 @@ p {
 	//box-shadow: 0 0 20px rgba(0,0,0,1);
 	//background: #603529;
 	background: rgba(132, 162, 194, .7);
-	font-family: 'Raleway', sans-serif;
+	font-family: $font-text;
 	font-size: 1rem;
 	position: relative;
 	z-index: 2;

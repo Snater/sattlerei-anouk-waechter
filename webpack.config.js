@@ -55,6 +55,20 @@ module.exports = {
 				},
 			},
 			{
+				from: 'node_modules/typeface-alex-brush/**/*',
+				to: 'vendor',
+				transformPath: (targetPath) => {
+					return targetPath.replace('node_modules/', '/');
+				},
+			},
+			{
+				from: 'node_modules/typeface-raleway/**/*',
+				to: 'vendor',
+				transformPath: (targetPath) => {
+					return targetPath.replace('node_modules/', '/');
+				},
+			},
+			{
 				from: 'node_modules/font-awesome/**/*',
 				to: 'vendor/font-awesome',
 				ignore: [

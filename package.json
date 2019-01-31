@@ -26,6 +26,8 @@
 		"jquery": "^3.2.1",
 		"jquery.easing": "^1.4.1",
 		"popper.js": "^1.14.6",
+		"typeface-alex-brush": "0.0.69",
+		"typeface-raleway": "0.0.54",
 		"waypoints": "^4.0.1"
 	},
 	"devDependencies": {

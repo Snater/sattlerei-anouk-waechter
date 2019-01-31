@@ -8,7 +8,8 @@
 	<title>Sattlerei Anouk Wächter – Königsberg i.Bay.</title>
 
 	<link href="dist/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-	<link href="https://fonts.googleapis.com/css?family=Alex+Brush|Lora|Raleway|Source+Sans+Pro" rel="stylesheet">
+	<link href="dist/vendor/typeface-alex-brush/index.css" rel="stylesheet" type="text/css">
+	<link href="dist/vendor/typeface-raleway/index.css" rel="stylesheet" type="text/css">
 
 	<link href="dist/main.css" rel="stylesheet">
 </head>
