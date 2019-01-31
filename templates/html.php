@@ -7,8 +7,8 @@
 
 	<title>Sattlerei Anouk Wächter – Königsberg i.Bay.</title>
 
-	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	<link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href="dist/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="dist/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	<link href="https://fonts.googleapis.com/css?family=Alex+Brush|Lora|Raleway|Source+Sans+Pro" rel="stylesheet">
 
 	<link href="dist/main.css" rel="stylesheet">
@@ -127,13 +127,13 @@
 
 </footer>
 
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/popper/popper.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-<script src="vendor/waypoints/jquery.waypoints.min.js"></script>
-<script src="vendor/waypoints/shortcuts/inview.min.js"></script>
-<script src="vendor/@babel/polyfill/polyfill.min.js"></script>
+<script src="dist/vendor/jquery/jquery.min.js"></script>
+<script src="dist/vendor/popper/popper.min.js"></script>
+<script src="dist/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="dist/vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="dist/vendor/waypoints/jquery.waypoints.min.js"></script>
+<script src="dist/vendor/waypoints/shortcuts/inview.min.js"></script>
+<script src="dist/vendor/@babel/polyfill/polyfill.min.js"></script>
 
 <script src="dist/main.js"></script>
 
