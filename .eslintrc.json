@@ -1,0 +1,31 @@
+{
+    "env": {
+        "browser": true,
+        "es6": true
+    },
+    "extends": "eslint:recommended",
+    "globals": {
+        "$": true,
+        "jQuery": true,
+        "Waypoint": true,
+        "window": true
+    },
+    "parserOptions": {
+        "ecmaVersion": 2016,
+        "sourceType": "script"
+    },
+    "rules": {
+        "indent": [
+            "error",
+            "tab"
+        ],
+        "quotes": [
+            "error",
+            "single"
+        ],
+        "semi": [
+            "error",
+            "always"
+        ]
+    }
+}
