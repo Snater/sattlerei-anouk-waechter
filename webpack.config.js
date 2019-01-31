@@ -5,6 +5,8 @@ const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const path = require('path');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
+const removeNodeModulesDir = targetPath => targetPath.replace('node_modules/', '/');
+
 module.exports = {
 	mode: 'production',
 	entry: './js/index.es6.js',
@@ -49,37 +51,29 @@ module.exports = {
 		new CopyWebpackPlugin([
 			{
 				from: 'node_modules/@babel/polyfill/dist/*',
-				to: 'vendor/@babel/polyfill',
-				transformPath: (targetPath) => {
-					return targetPath.replace('node_modules/@babel/polyfill/dist/', '/');
-				},
+				to: 'vendor',
+				transformPath: removeNodeModulesDir,
 			},
 			{
 				from: 'node_modules/typeface-alex-brush/**/*',
 				to: 'vendor',
-				transformPath: (targetPath) => {
-					return targetPath.replace('node_modules/', '/');
-				},
+				transformPath: removeNodeModulesDir,
 			},
 			{
 				from: 'node_modules/typeface-raleway/**/*',
 				to: 'vendor',
-				transformPath: (targetPath) => {
-					return targetPath.replace('node_modules/', '/');
-				},
+				transformPath: removeNodeModulesDir,
 			},
 			{
 				from: 'node_modules/font-awesome/**/*',
-				to: 'vendor/font-awesome',
+				to: 'vendor',
 				ignore: [
 					'node_modules/font-awesome/**/*.map',
 					'node_modules/font-awesome/*',
 					'node_modules/font-awesome/less/*',
 					'node_modules/font-awesome/scss/*',
 				],
-				transformPath: (targetPath) => {
-					return targetPath.replace('node_modules/font-awesome/', '/');
-				},
+				transformPath: removeNodeModulesDir,
 			},
 		]),
 		new CleanWebpackPlugin('dist'),
