@@ -2,6 +2,7 @@ import * as contact from './contact.es6.js';
 import * as images from './images.es6.js';
 import * as navbar from './navbar.es6.js';
 import * as scroll from './scroll.es6.js';
+import '../scss/styles.scss';
 
 $(() => {
 	contact.attachFormSubmitHandler($('#contact').find('form'));

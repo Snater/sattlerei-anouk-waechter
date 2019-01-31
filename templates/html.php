@@ -11,7 +11,7 @@
 	<link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	<link href="https://fonts.googleapis.com/css?family=Alex+Brush|Lora|Raleway|Source+Sans+Pro" rel="stylesheet">
 
-	<link href="css/styles.min.css" rel="stylesheet">
+	<link href="dist/main.css" rel="stylesheet">
 </head>
 
 

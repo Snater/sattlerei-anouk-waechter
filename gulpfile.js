@@ -1,26 +1,11 @@
-const { src, dest, series, parallel } = require('gulp');
+const { src, dest, series } = require('gulp');
 const del = require('del');
-const cleanCSS = require('gulp-clean-css');
-const rename = require('gulp-rename');
-const sass = require('gulp-sass');
 const merge = require('merge-stream');
 
 const clean = () =>
 	del([
-		'css/*',
 		'vendor/**/*',
 	]);
-
-const compileSass = () =>
-	src('scss/*.scss')
-		.pipe(sass())
-		.pipe(dest('css'));
-
-const minifyCss = () =>
-	src(['css/*.css', '!css/*.min.css'])
-		.pipe(cleanCSS({compatibility: 'ie8'}))
-		.pipe(rename({suffix: '.min'}))
-		.pipe(dest('css'));
 
 const copyFiles = () =>
 	merge(
@@ -63,8 +48,5 @@ const copyFiles = () =>
 
 exports.default = series(
 	clean,
-	parallel(
-		series(compileSass, minifyCss),
-		copyFiles
-	)
+	copyFiles
 );
