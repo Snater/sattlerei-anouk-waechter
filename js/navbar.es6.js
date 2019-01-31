@@ -1,3 +1,6 @@
+import '../node_modules/waypoints/lib/jquery.waypoints.min.js';
+import '../node_modules/waypoints/lib/shortcuts/inview.min.js';
+
 const shrinkableNavbar = () => {
 	new Waypoint.Inview({
 		element: $('.nav-scroller').get(0),

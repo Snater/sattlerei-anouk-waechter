@@ -55,16 +55,6 @@ module.exports = {
 				},
 			},
 			{
-				from: 'node_modules/bootstrap/dist/**/*',
-				to: 'vendor/bootstrap',
-				ignore: [
-					'**/*.map',
-				],
-				transformPath: (targetPath) => {
-					return targetPath.replace('node_modules/bootstrap/dist/', '/');
-				},
-			},
-			{
 				from: 'node_modules/font-awesome/**/*',
 				to: 'vendor/font-awesome',
 				ignore: [
@@ -78,41 +68,17 @@ module.exports = {
 				},
 			},
 			{
-				from: 'node_modules/jquery/dist/jquery.*js',
+				from: 'node_modules/jquery/dist/jquery*.js',
 				to: 'vendor/jquery',
 				transformPath: (targetPath,) => {
 					return targetPath.replace('node_modules/jquery/dist/', '/');
 				},
 			},
 			{
-				from: 'node_modules/jquery.easing/*.js',
+				from: 'node_modules/jquery.easing/jquery.easing*.js',
 				to: 'vendor/jquery-easing',
 				transformPath: (targetPath) => {
 					return targetPath.replace('node_modules/jquery.easing/', '/');
-				},
-			},
-			{
-				from: 'node_modules/popper.js/dist/umd/popper.*js',
-				to: 'vendor/popper',
-				transformPath: (targetPath) => {
-					return targetPath.replace('node_modules/popper.js/dist/umd/', '/');
-				},
-			},
-			{
-				from: 'node_modules/waypoints/lib/**/*',
-				to: 'vendor/waypoints',
-				ignore: [
-					'node_modules/waypoints/lib/*',
-				],
-				transformPath: (targetPath) => {
-					return targetPath.replace('node_modules/waypoints/lib/', '/');
-				},
-			},
-			{
-				from: 'node_modules/waypoints/lib/**/jquery.waypoints.*',
-				to: 'vendor/waypoints',
-				transformPath: (targetPath) => {
-					return targetPath.replace('node_modules/waypoints/lib/', '/');
 				},
 			},
 		]),
