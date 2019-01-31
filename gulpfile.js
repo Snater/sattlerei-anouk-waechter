@@ -5,13 +5,14 @@ const cleanCSS = require('gulp-clean-css');
 const concat = require('gulp-concat');
 const rename = require('gulp-rename');
 const sass = require('gulp-sass');
-const uglify = require('gulp-uglify');
+const uglify = require('gulp-uglify-es').default;
 const merge = require('merge-stream');
 
 const clean = () =>
 	del([
 		'css/*',
 		'js/*.js',
+		'!js/*.es6.js',
 		'vendor/**/*',
 	]);
 
@@ -28,14 +29,14 @@ const minifyCss = () =>
 
 const compileJs = () =>
 	src([
-		'js/*.es6'
+		'js/*.es6.js'
 	])
-		.pipe(babel({presets: ['@babel/env']}))
+		.pipe(babel({presets: ['@babel/preset-env']}))
 		.pipe(concat('main.js'))
 		.pipe(dest('js'));
 
 const minifyJs = () =>
-	src(['js/*.js', '!js/*.min.js'])
+	src(['js/*.js', '!js/*.es6.js', '!js/*.min.js'])
 		.pipe(uglify())
 		.pipe(rename({suffix: '.min'}))
 		.pipe(dest('js'));

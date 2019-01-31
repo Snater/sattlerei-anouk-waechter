@@ -1,5 +1,6 @@
 .idea
 css
 js/*.js
+!js/*.es6.js
 node_modules
 vendor
