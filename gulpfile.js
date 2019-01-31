@@ -1,18 +1,13 @@
 const { src, dest, series, parallel } = require('gulp');
 const del = require('del');
-const babel = require('gulp-babel');
 const cleanCSS = require('gulp-clean-css');
-const concat = require('gulp-concat');
 const rename = require('gulp-rename');
 const sass = require('gulp-sass');
-const uglify = require('gulp-uglify-es').default;
 const merge = require('merge-stream');
 
 const clean = () =>
 	del([
 		'css/*',
-		'js/*.js',
-		'!js/*.es6.js',
 		'vendor/**/*',
 	]);
 
@@ -26,20 +21,6 @@ const minifyCss = () =>
 		.pipe(cleanCSS({compatibility: 'ie8'}))
 		.pipe(rename({suffix: '.min'}))
 		.pipe(dest('css'));
-
-const compileJs = () =>
-	src([
-		'js/*.es6.js'
-	])
-		.pipe(babel({presets: ['@babel/preset-env']}))
-		.pipe(concat('main.js'))
-		.pipe(dest('js'));
-
-const minifyJs = () =>
-	src(['js/*.js', '!js/*.es6.js', '!js/*.min.js'])
-		.pipe(uglify())
-		.pipe(rename({suffix: '.min'}))
-		.pipe(dest('js'));
 
 const copyFiles = () =>
 	merge(
@@ -84,7 +65,6 @@ exports.default = series(
 	clean,
 	parallel(
 		series(compileSass, minifyCss),
-		series(compileJs, minifyJs),
 		copyFiles
 	)
 );

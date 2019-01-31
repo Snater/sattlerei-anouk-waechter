@@ -12,7 +12,7 @@
     },
     "parserOptions": {
         "ecmaVersion": 2016,
-        "sourceType": "script"
+        "sourceType": "module"
     },
     "rules": {
         "indent": [
