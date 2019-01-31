@@ -126,10 +126,7 @@
 
 </footer>
 
-<script src="dist/vendor/jquery/jquery.min.js"></script>
-<script src="dist/vendor/jquery-easing/jquery.easing.min.js"></script>
 <script src="dist/vendor/@babel/polyfill/polyfill.min.js"></script>
-
 <script src="dist/main.js"></script>
 
 </body>

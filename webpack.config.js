@@ -1,9 +1,9 @@
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const path = require('path');
-const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
 	mode: 'production',
@@ -67,21 +67,16 @@ module.exports = {
 					return targetPath.replace('node_modules/font-awesome/', '/');
 				},
 			},
-			{
-				from: 'node_modules/jquery/dist/jquery*.js',
-				to: 'vendor/jquery',
-				transformPath: (targetPath,) => {
-					return targetPath.replace('node_modules/jquery/dist/', '/');
-				},
-			},
-			{
-				from: 'node_modules/jquery.easing/jquery.easing*.js',
-				to: 'vendor/jquery-easing',
-				transformPath: (targetPath) => {
-					return targetPath.replace('node_modules/jquery.easing/', '/');
-				},
-			},
 		]),
 		new CleanWebpackPlugin('dist'),
-	]
+	],
+	resolve: {
+		alias: {
+			bootstrap: `${__dirname}/node_modules/bootstrap/dist/js/bootstrap.min`,
+			inview: `${__dirname}/node_modules/waypoints/lib/shortcuts/inview.min`,
+			jquery: `${__dirname}/node_modules/jquery/src/jquery`,
+			'jquery.waypoints': `${__dirname}/node_modules/waypoints/lib/jquery.waypoints.min`,
+			popper: `${__dirname}/node_modules/popper.js/dist/umd/popper.min`,
+		},
+	},
 };

@@ -1,5 +1,6 @@
-import '../node_modules/popper.js/dist/umd/popper.min.js';
-import '../node_modules/bootstrap/dist/js/bootstrap.min.js';
+import $ from 'jquery';
+import 'popper';
+import 'bootstrap';
 import * as contact from './contact.es6.js';
 import * as images from './images.es6.js';
 import * as navbar from './navbar.es6.js';

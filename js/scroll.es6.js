@@ -1,3 +1,6 @@
+import $ from 'jquery';
+import 'jquery.easing';
+
 const getNavbarHeight = () => {
 	const $mainNav = $('#mainNav');
 	const $navbarExt = $mainNav.find('.navbar-collapse.show');

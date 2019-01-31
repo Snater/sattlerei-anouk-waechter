@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 const attachFormSubmitHandler = ($form) => {
 	$form.on('submit', () => {
 		const $fieldset = $form.find('fieldset');

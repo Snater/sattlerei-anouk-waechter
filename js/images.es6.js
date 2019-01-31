@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 let intervals = {};
 
 const nextImage = ($active) => {

@@ -1,5 +1,6 @@
-import '../node_modules/waypoints/lib/jquery.waypoints.min.js';
-import '../node_modules/waypoints/lib/shortcuts/inview.min.js';
+import $ from 'jquery';
+import 'jquery.waypoints';
+import 'inview';
 
 const shrinkableNavbar = () => {
 	new Waypoint.Inview({
