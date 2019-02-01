@@ -1,0 +1,11 @@
+Name: {{ name }}
+{% if phone -%}
+	Telefon: {{ phone }}
+{% endif %}
+E-Mail: {{ email }}
+
+Nachricht:
+{{ text }}
+
+---
+www.sattlerei-anouk-wächter.de | {{ REMOTE_ADDR }} | {{ 'now'|date('d.m.Y - H:i') }} Uhr

@@ -4,6 +4,10 @@ if (!isset($_POST['form']) || $_POST['form'] !== 'contact') {
 	die('Invalid parameters.');
 }
 
+require_once __DIR__
+	. DIRECTORY_SEPARATOR . '..'
+	. DIRECTORY_SEPARATOR . 'init.php';
+
 $output = [
 	'errors' => [],
 ];
@@ -48,20 +52,9 @@ if (count($output['errors'])) {
 	exit();
 }
 
-ob_start();
-?>
-Name: <?php echo $values['name'] . "\r\n"; ?>
-<?php echo (!empty($values['phone']) ? 'Telefon: ' . $values['phone'] . "\r\n" : ''); ?>
-E-Mail: <?php echo $values['email'] . "\r\n"; ?>
-
-Nachricht:
-<?php echo $values['text'] . "\r\n"; ?>
-
----
-www.sattlerei-anouk-wächter.de | <?php echo $_SERVER['REMOTE_ADDR']; ?> | <?php echo date('d.m.Y'); ?> – <?php echo date('H:i'); ?> Uhr
-
-<?php
-$message = ob_get_clean();
+$message = $twig->render('contact-mail.html.twig', array_merge($values, [
+	'REMOTE_ADDR' => $_SERVER['REMOTE_ADDR'],
+]));
 
 if (empty($_POST['men'])) {
 	$sent = mail(
