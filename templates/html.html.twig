@@ -16,7 +16,7 @@
 <body id="page-top" class="{{ exe }}"{{ is_index ? ' data-spy="scroll" data-target="#mainNav" data-offset="200"' }}>
 
 	{% include 'nav.html.twig' %}
-	{% include exe ~ '.html.twig' %}
+	{% block content %}{% endblock %}
 	{% include 'footer.html.twig' %}
 
 	<script src="dist/conditional-polyfill.js"></script>

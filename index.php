@@ -30,7 +30,7 @@ $TEMPLATE_DIR = __DIR__ . DIRECTORY_SEPARATOR . 'templates' . DIRECTORY_SEPARATO
 
 $exe = isset($_GET['exe']) ? $_GET['exe'] : 'index';
 
-echo $twig->render('html.html.twig', [
+echo $twig->render($exe . '.html.twig', [
 	'exe' => $exe,
 	'is_front' => $exe === 'index',
 	'REMOTE_DIR' => $REMOTE_DIR,
