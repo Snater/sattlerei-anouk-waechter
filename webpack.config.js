@@ -9,9 +9,12 @@ const removeNodeModulesDir = targetPath => targetPath.replace('node_modules/', '
 
 module.exports = {
 	mode: 'production',
-	entry: './js/index.es6.js',
+	entry: {
+		main: './js/index.es6.js',
+		'conditional-polyfill': './js/conditional-polyfill.js',
+	},
 	output: {
-		filename: 'main.js',
+		filename: '[name].js',
 		path: path.resolve(__dirname, 'dist')
 	},
 	optimization: {
@@ -33,6 +36,10 @@ module.exports = {
 				query: {
 					presets: ['@babel/preset-env']
 				}
+			},
+			{
+				test: /\.js$/,
+				exclude: [/node_modules/, /\.es6.js$/],
 			},
 			{
 				test: /\.scss$/,

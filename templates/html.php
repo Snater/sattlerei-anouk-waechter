@@ -127,24 +127,7 @@
 
 </footer>
 
-<script type="text/javascript">
-	const supportsES6 = function() {
-		try {
-			new Function('(a = 0) => a');
-			return true;
-		}
-		catch (err) {
-			return false;
-		}
-	}();
-
-	if (!supportsES6) {
-		let script = document.createElement("script");
-		script.src = 'dist/vendor/@babel/polyfill/dist/polyfill.min.js';
-		document.head.appendChild(script);
-	}
-</script>
-
+<script src="dist/conditional-polyfill.js"></script>
 <script src="dist/main.js"></script>
 
 </body>
