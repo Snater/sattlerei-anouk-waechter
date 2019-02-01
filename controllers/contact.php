@@ -19,32 +19,50 @@ if (isset($_SESSION['contact']) && $_SESSION['contact'] + 5 * 60 > time()) {
 }
 
 $fields = [
-	'name' => 'Name',
-	'phone' => 'Telefon',
-	'email' => 'E-Mail',
-	'text' => 'Anliegen',
-];
-
-$required = [
-	'name',
-	'email',
-	'text',
+	[
+		'key' => 'name',
+		'label' => 'Name',
+		'required' => true,
+	], [
+		'key' => 'phone',
+		'label' => 'Telefon',
+	], [
+		'key' => 'email',
+		'label' => 'E-Mail',
+		'required' => true,
+		'check' => [
+			'filter' => FILTER_VALIDATE_EMAIL,
+			'error' => 'Die eingegebene E-Mail-Adresse ist ungültig.',
+		],
+	], [
+		'key' => 'text',
+		'label' => 'Nachricht',
+		'required' => true,
+	],
 ];
 
 $values = [];
 
-foreach ($fields as $key => $title) {
-	$values[$key] = filter_var(trim($_POST[$key]), FILTER_SANITIZE_STRING);
-}
+foreach ($fields as &$field) {
+	$value = filter_var(
+		trim($_POST[$field['key']]),
+		FILTER_SANITIZE_STRING
+	);
 
-foreach ($required as $key) {
-	if (empty($values[$key])) {
-		$output['errors'][] = 'Pflichtfeld nicht ausgefüllt: ' . $fields[$key] . '.';
+	if (
+		isset($field['required']) && $field['required'] === true
+		&& empty($value)
+	) {
+		$output['errors'][] = 'Pflichtfeld nicht ausgefüllt: ' . $field['label'] . '.';
 	}
-}
 
-if (!filter_var($values['email'], FILTER_VALIDATE_EMAIL)) {
-	$output['errors'][] = 'Die eingegebene E-Mail-Adresse ist ungültig.';
+	if (isset($field['check'])) {
+		if (!filter_var($value, $field['check']['filter'])) {
+			$output['errors'][] = $field['check']['error'];
+		}
+	}
+
+	$values[$field['key']] = $value;
 }
 
 if (count($output['errors'])) {
@@ -61,7 +79,10 @@ if (empty($_POST['men'])) {
 		'info@sattlerei-anouk-waechter.de',
 		'[sattlerei-anouk-wächter.de] Kontaktforumlar',
 		$message,
-		'From: "' . $values['name'] . '" <' . $values['email'] . '>' . "\r\n" . 'Content-Type: text/plain; Charset=utf-8'
+		join("\r\n", [
+			'From: "' . $values['name'] . '" <' . $values['email'] . '>',
+			'Content-Type: text/plain; Charset=utf-8'
+		])
 	);
 }
 
