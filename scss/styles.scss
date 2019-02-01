@@ -250,9 +250,10 @@ h1 {
 		font-size: 1.5rem;
 	}
 
-	hr {
+	span.hr {
 		border: none;
 		border-bottom: 1px solid #ffffff;
+		display: block;
 		margin-bottom: 18px;
 		margin-top: -5px;
 	}
