@@ -196,8 +196,12 @@ body {
 
 	.navbar-collapse {
 		border-top: 1px solid #DEDEDE;
+
+		margin: 0 15px;
+
 		@include media-breakpoint-up(md) {
 			border: 0;
+			margin: 0;
 		}
 	}
 }
