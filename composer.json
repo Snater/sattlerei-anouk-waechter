@@ -1,0 +1,13 @@
+{
+    "name": "snater.com/sattlerei-anouk-waechter",
+    "type": "project",
+    "authors": [
+        {
+            "name": "snater.com",
+            "email": "dev@snater.com"
+        }
+    ],
+    "require": {
+        "twig/twig": "^2.6"
+    }
+}
