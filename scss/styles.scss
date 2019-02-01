@@ -98,6 +98,19 @@ body {
 			color: #000 !important;
 			background: transparent;
 		}
+
+		span {
+			font-family: $font-heading;
+			font-size: 1.6rem;
+			font-weight: normal;
+			margin-left: 0.6rem;
+
+			span {
+				font-family: $font-text;
+				font-size: 0.8rem;
+				font-weight: normal;
+			}
+		}
 	}
 
 	.navbar-toggler {
