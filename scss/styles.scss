@@ -293,16 +293,12 @@ body {
 		color: $white;
 		text-decoration: none;
 
-		&:focus {
-			text-decoration: none;
-		}
-
 		&:hover {
-			font-weight: bold;
+			text-decoration: underline;
 		}
 
 		&.active {
-			text-decoration: underline;
+			font-weight: bold;
 		}
 	}
 }
