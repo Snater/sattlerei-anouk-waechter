@@ -473,8 +473,13 @@ section {
 			position: absolute;
 		}
 
-		.loading {
-			opacity: 0;
+		.spinner {
+			transition: all .4s ease;
+			width: 0;
+
+			&.active {
+				width: 1rem;
+			}
 		}
 	}
 

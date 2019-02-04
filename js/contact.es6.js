@@ -3,8 +3,9 @@ import $ from 'jquery';
 const attachFormSubmitHandler = ($form) => {
 	$form.on('submit', () => {
 		const $fieldset = $form.find('fieldset');
-		const $loading = $form.find('.loading');
+		const $spinner = $form.find('.spinner');
 		const $message = $form.find('.status-message');
+		const $submit = $form.find('button[type="submit"]');
 		const deferred = $.Deferred();
 
 		if (!$message.is(':visible')) {
@@ -16,7 +17,8 @@ const attachFormSubmitHandler = ($form) => {
 		}
 
 		$fieldset.prop('readonly', true);
-		$loading.fadeIn();
+		$spinner.addClass('active');
+		$submit.prop('disabled', true);
 
 		deferred.promise().done(() => {
 			$message.removeClass('alert-danger alert-success');
@@ -29,8 +31,9 @@ const attachFormSubmitHandler = ($form) => {
 			}).done((response) => {
 				let messages = [];
 
-				$loading.fadeOut();
+				$spinner.removeClass('active');
 				$fieldset.removeProp('readonly');
+				$submit.prop('disabled', false);
 
 				if (response.errors.length) {
 					messages = response.errors;
