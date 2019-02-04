@@ -18,6 +18,10 @@ $(() => {
 		navbar.shrinkableNavbar();
 	}
 
-	scroll.attachSmoothScroll($('a[href*="#"]:not([href="#"]):not([data-toggle="collapse"])'));
+	scroll.attachSmoothScroll(
+		$('a[href*="#"]:not([href="#"]):not([data-toggle="collapse"])')
+	);
 	scroll.initialProductsFlip($('.flip-container'));
+	scroll.initAutoScrolling();
+	scroll.closeReponsiveMenuOnClick();
 });

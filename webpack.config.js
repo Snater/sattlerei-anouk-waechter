@@ -9,6 +9,7 @@ const removeNodeModulesDir = targetPath => targetPath.replace('node_modules/', '
 
 module.exports = {
 	mode: 'production',
+	devtool: false,
 	entry: {
 		main: './js/index.es6.js',
 		'conditional-polyfill': './js/conditional-polyfill.js',
@@ -22,7 +23,7 @@ module.exports = {
 			new UglifyJsPlugin({
 				cache: true,
 				parallel: true,
-				sourceMap: false
+				sourceMap: true
 			}),
 			new OptimizeCSSAssetsPlugin({})
 		]

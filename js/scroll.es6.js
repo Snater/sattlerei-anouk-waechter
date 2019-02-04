@@ -1,18 +1,27 @@
 import $ from 'jquery';
 import 'jquery.easing';
 
+/**
+ * @return {int}
+ */
 const getNavbarHeight = () => {
 	const $mainNav = $('#mainNav');
 	const $navbarExt = $mainNav.find('.navbar-collapse.show');
 	return $mainNav.outerHeight() - ($navbarExt.outerHeight() || 0);
 };
 
-const scrollTo = ($target) =>
+/**
+ * @param {jQuery} $target
+ */
+const scrollTo = $target =>
 	$('html, body').animate({
 		scrollTop: ($target.offset().top - getNavbarHeight() + 1)
 	}, 1000, 'easeInOutExpo');
 
-const attachSmoothScroll = ($elements) => {
+/**
+ * @param {jQuery} $elements
+ */
+const attachSmoothScroll = $elements => {
 	$elements.click(function() {
 		if (
 			location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '')
@@ -32,6 +41,10 @@ const attachSmoothScroll = ($elements) => {
 	});
 };
 
+/**
+ * @param {jQuery} $flipContainers
+ * @param {int} i
+ */
 const initialFlip = ($flipContainers, i) => {
 	$flipContainers.eq(i).removeClass('initial');
 	if ($flipContainers.length > i) {
@@ -39,7 +52,10 @@ const initialFlip = ($flipContainers, i) => {
 	}
 };
 
-const initialProductsFlip = ($flipContainers) => {
+/**
+ * @param {jQuery} $flipContainers
+ */
+const initialProductsFlip = $flipContainers => {
 	if (!$flipContainers.length) {
 		return;
 	}
@@ -53,16 +69,9 @@ const initialProductsFlip = ($flipContainers) => {
 	});
 };
 
-export {attachSmoothScroll, initialProductsFlip};
-
-$(() => {
+const initAutoScrolling = () => {
 	$('#imprint-container').find('.collapse').on('shown.bs.collapse', (e) => {
 		scrollTo($(e.target).parents('#imprint-container'));
-	});
-
-	// Close responsive menu when a link is clicked:
-	$('.navbar-collapse > ul > li > a').click(() => {
-		$('.navbar-collapse').collapse('hide');
 	});
 
 	if ($('.alert-danger').length) {
@@ -72,4 +81,17 @@ $(() => {
 	$('.collapse').on('shown.bs.collapse', (e) => {
 		scrollTo($(e.target));
 	});
-});
+};
+
+const closeReponsiveMenuOnClick = () => {
+	$('.navbar-collapse > ul > li > a').click(() => {
+		$('.navbar-collapse').collapse('hide');
+	});
+};
+
+export {
+	attachSmoothScroll,
+	initialProductsFlip,
+	initAutoScrolling,
+	closeReponsiveMenuOnClick
+};
