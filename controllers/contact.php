@@ -8,6 +8,9 @@ require_once __DIR__
 	. DIRECTORY_SEPARATOR . '..'
 	. DIRECTORY_SEPARATOR . 'init.php';
 
+use Utility\SanitizeException;
+use Utility\Util;
+
 $output = [
 	'errors' => [],
 ];
@@ -18,7 +21,7 @@ if (isset($_SESSION['contact']) && $_SESSION['contact'] + 5 * 60 > time()) {
 	exit();
 }
 
-$fields = [
+$fieldDefinitions = [
 	[
 		'key' => 'name',
 		'label' => 'Name',
@@ -41,31 +44,10 @@ $fields = [
 	],
 ];
 
-$values = [];
-
-foreach ($fields as &$field) {
-	$value = filter_var(
-		trim($_POST[$field['key']]),
-		FILTER_SANITIZE_STRING
-	);
-
-	if (
-		isset($field['required']) && $field['required'] === true
-		&& empty($value)
-	) {
-		$output['errors'][] = 'Pflichtfeld nicht ausgefüllt: ' . $field['label'] . '.';
-	}
-
-	if (isset($field['check'])) {
-		if (!filter_var($value, $field['check']['filter'])) {
-			$output['errors'][] = $field['check']['error'];
-		}
-	}
-
-	$values[$field['key']] = $value;
-}
-
-if (count($output['errors'])) {
+try {
+	$values = Util::sanitizeValues($fieldDefinitions, $_POST);
+} catch (SanitizeException $e) {
+	$output['errors'] = $e->getErrorMessages();
 	echo json_encode($output);
 	exit();
 }
@@ -74,6 +56,7 @@ $message = $twig->render('contact-mail.html.twig', array_merge($values, [
 	'REMOTE_ADDR' => $_SERVER['REMOTE_ADDR'],
 ]));
 
+// Fail silently on failed no-robot check.
 if (empty($_POST['men'])) {
 	$sent = mail(
 		'info@sattlerei-anouk-waechter.de',
@@ -93,5 +76,5 @@ if (isset($sent) && !$sent) {
 	$_SESSION['contact'] = time();
 }
 
-echo json_encode( $output );
+echo json_encode($output);
 exit();
