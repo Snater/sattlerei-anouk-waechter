@@ -1,6 +1,5 @@
 @import 'variables';
 @import '../node_modules/bootstrap/scss/bootstrap.scss';
-@import 'mixins';
 
 /*
  * Globals
@@ -54,12 +53,6 @@ body {
 		font-size: 1.2rem;
 	}
 }
-
-.cover-container {
-	background: url(../img/090619.jpg) center center;
-	background-size: cover;
-}
-
 
 #mainNav {
 	background-color: #ffffff;
@@ -145,7 +138,7 @@ body {
 		.navbar-nav {
 			margin: auto;
 		}
-		
+
 		a {
 			color: white;
 			&:focus,
@@ -224,6 +217,8 @@ body {
 }
 
 .cover-container {
+	background: url(../img/090619.jpg) center center;
+	background-size: cover;
 	color: #ffffff;
 	font-size: 1.2rem;
 
