@@ -1,11 +1,18 @@
 {
-	"extends": "stylelint-config-recommended",
+	"extends": "stylelint-config-standard",
 	"ignoreFiles": [
 		"**/*.css",
 		"node_modules/**/*.scss"
 	],
 	"rules": {
-		"at-rule-no-unknown": null,
+		"at-rule-no-unknown": [true, {
+			"ignoreAtRules": [
+				"include",
+				"mixin"
+			]
+		}],
+		"declaration-empty-line-before": "never",
+		"indentation": "tab",
 		"no-descending-specificity": null
 	}
 }
