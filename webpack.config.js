@@ -3,6 +3,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const path = require('path');
+const StyleLintPlugin = require('stylelint-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 const removeNodeModulesDir = targetPath => targetPath.replace('node_modules/', '/');
@@ -56,6 +57,7 @@ module.exports = {
 	},
 	plugins: [
 		new MiniCssExtractPlugin(),
+		new StyleLintPlugin(),
 		new CopyWebpackPlugin([
 			{
 				from: 'node_modules/@babel/polyfill/dist/*',
