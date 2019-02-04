@@ -5,22 +5,35 @@ namespace Utility;
 class Util {
 
 	/**
-	 * @param string $imagesSubDir
+	 * @param string $category
 	 * @return string[]
 	 */
-	static function getImages($imagesSubDir) {
+	static function getImages($category) {
 		$files = [];
-		$dir = __DIR__
+		$categoryDir = __DIR__
 			. DIRECTORY_SEPARATOR . '..'
 			. DIRECTORY_SEPARATOR . 'img'
-			. DIRECTORY_SEPARATOR . $imagesSubDir;
+			. DIRECTORY_SEPARATOR . $category;
 
-		if (!file_exists($dir)) {
+		if (!file_exists($categoryDir)) {
 			return $files;
 		}
 
-		foreach (array_diff(scandir($dir), ['.', '..']) as $filename) {
-			$files[] = 'img/' . $imagesSubDir . '/' . $filename;
+		foreach (array_diff(scandir($categoryDir), ['.', '..']) as $productLineId) {
+			$productLineDir = $categoryDir . DIRECTORY_SEPARATOR . $productLineId;
+
+			if (is_file($productLineDir)) {
+				continue;
+			}
+
+			$files[$productLineId] = [];
+
+			foreach (array_diff(scandir($productLineDir), ['.', '..']) as $filename) {
+				if (is_file($productLineDir . DIRECTORY_SEPARATOR . $filename)) {
+					$files[$productLineId][]
+						= join('/', ['img', $category, $productLineId, $filename]);
+				}
+			}
 		}
 
 		return $files;

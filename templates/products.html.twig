@@ -1,0 +1,37 @@
+{% macro set(category, id, title, images) %}
+
+<section class="products products-{{ category }}">
+	<div class="container">
+
+		<h2 class="text-center mt-sm-4">{{ title }}</h2>
+
+		<div class="row">
+			<div class="col-md-6 product-images">
+				<div class="row">
+					<div class="col-12 product-image">
+						<img src="{{ images[id][0] }}" class="img-fluid">
+					</div>
+					<div class="col-12 d-sm-none product-images-more text-center">
+						<a href="#" class="d-block mt-3 mb-3 p-1" role="button">mehr Bilder</a>
+					</div>
+					<div class="col-12 product-images-thumbnails d-none d-sm-block">
+						<div class="row">
+							{% for i, img_src in images[id] %}
+								<div class="col-12 col-sm-3 col-md-4 product-image-thumbnail{{ i == 0 ? ' d-none d-sm-block active' }}">
+									<a href="{{ img_src }}">
+										<img src="{{ img_src }}" class="img-fluid">
+									</a>
+								</div>
+							{% endfor %}
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				{% include category ~ '-' ~ id ~ '.html.twig' %}
+			</div>
+		</div>
+	</div>
+</section>
+
+{% endmacro %}
