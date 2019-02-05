@@ -15,6 +15,7 @@
         "sourceType": "module"
     },
     "rules": {
+        "arrow-parens": ["error", "as-needed"],
         "indent": [
             "error",
             "tab"

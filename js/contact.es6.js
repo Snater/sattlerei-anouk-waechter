@@ -1,6 +1,6 @@
 import $ from 'jquery';
 
-const attachFormSubmitHandler = ($form) => {
+const attachFormSubmitHandler = $form => {
 	$form.on('submit', () => {
 		const $fieldset = $form.find('fieldset');
 		const $spinner = $form.find('.spinner');
@@ -28,7 +28,7 @@ const attachFormSubmitHandler = ($form) => {
 				data: $form.serialize(),
 				type: 'POST',
 				dataType: 'json'
-			}).done((response) => {
+			}).done(response => {
 				let messages = [];
 
 				$spinner.removeClass('active');

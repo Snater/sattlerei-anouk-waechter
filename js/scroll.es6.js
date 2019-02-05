@@ -70,7 +70,7 @@ const initialProductsFlip = $flipContainers => {
 };
 
 const initAutoScrolling = () => {
-	$('#imprint-container').find('.collapse').on('shown.bs.collapse', (e) => {
+	$('#imprint-container').find('.collapse').on('shown.bs.collapse', e => {
 		scrollTo($(e.target).parents('#imprint-container'));
 	});
 
@@ -78,7 +78,7 @@ const initAutoScrolling = () => {
 		scrollTo($('#contact'));
 	}
 
-	$('.collapse').on('shown.bs.collapse', (e) => {
+	$('.collapse').on('shown.bs.collapse', e => {
 		scrollTo($(e.target));
 	});
 };

@@ -5,7 +5,7 @@ import 'inview';
 const shrinkableNavbar = () => {
 	new Waypoint.Inview({
 		element: $('.nav-scroller').get(0),
-		enter: (direction) => {
+		enter: direction => {
 			if (direction === 'up') {
 				if ($('.navbar-toggler').is(':visible')) {
 					$('#mainNav').removeClass('navbar-shrink');
@@ -19,7 +19,7 @@ const shrinkableNavbar = () => {
 				}
 			}
 		},
-		exit: (direction) => {
+		exit: direction => {
 			if (direction === 'down') {
 				if ($('.navbar-toggler').is(':visible')) {
 					$('#mainNav').addClass('navbar-shrink');

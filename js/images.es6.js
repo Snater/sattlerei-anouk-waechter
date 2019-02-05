@@ -2,7 +2,7 @@ import $ from 'jquery';
 
 let intervals = {};
 
-const nextImage = ($active) => {
+const nextImage = $active => {
 	$active.removeClass('active');
 	let $next = $active.next();
 	if (!$next.length) {
@@ -11,7 +11,7 @@ const nextImage = ($active) => {
 	$next.addClass('active').find('a').trigger('click');
 };
 
-const startSlideShow = ($images) => {
+const startSlideShow = $images => {
 	$images.each(function() {
 		intervals[this] = setInterval(() => {
 			nextImage($(this).find('.product-image-thumbnail.active'));
@@ -22,8 +22,8 @@ const startSlideShow = ($images) => {
 	});
 };
 
-const attachImageToggle = ($thumbnails) => {
-	$thumbnails.on('click', (e) => {
+const attachImageToggle = $thumbnails => {
+	$thumbnails.on('click', e => {
 		if ($('.navbar-toggler').is(':visible')) {
 			return false;
 		}
@@ -43,8 +43,8 @@ const attachImageToggle = ($thumbnails) => {
 	});
 };
 
-const attachMoreToggle = ($link) => {
-	$link.on('click', (e) => {
+const attachMoreToggle = $link => {
+	$link.on('click', e => {
 		const $more = $(e.target).parent();
 		const $images = $more.closest('.product-images');
 		$images.find('.product-images-thumbnails').hide().removeClass('d-none').slideDown({
