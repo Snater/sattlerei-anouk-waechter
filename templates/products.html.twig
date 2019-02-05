@@ -1,4 +1,4 @@
-{% macro set(category, id, title, images) %}
+{% macro set(category, id, title, images, orientation) %}
 
 <section class="products products-{{ category }}">
 	<div class="container">
@@ -27,7 +27,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-md-6">
+			<div class="col-md-6{% if orientation == 'left' %} order-md-first{% endif %}">
 				{% include category ~ '-' ~ id ~ '.html.twig' %}
 			</div>
 		</div>
