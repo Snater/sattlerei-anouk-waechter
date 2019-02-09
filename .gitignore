@@ -1,6 +1,5 @@
 .idea
-css
-dist
 node_modules
 vendor
-google*.html
+web/dist
+web/google*.html

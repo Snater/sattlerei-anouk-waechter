@@ -17,7 +17,7 @@ module.exports = {
 	},
 	output: {
 		filename: '[name].js',
-		path: path.resolve(__dirname, 'dist')
+		path: path.resolve(__dirname, 'web/dist')
 	},
 	optimization: {
 		minimizer: [
@@ -86,7 +86,7 @@ module.exports = {
 				transformPath: removeNodeModulesDir,
 			},
 		]),
-		new CleanWebpackPlugin('dist'),
+		new CleanWebpackPlugin('web/dist'),
 	],
 	resolve: {
 		alias: {
