@@ -8,8 +8,8 @@ require_once __DIR__
 	. DIRECTORY_SEPARATOR . '..'
 	. DIRECTORY_SEPARATOR . 'init.php';
 
-use Utility\SanitizeException;
-use Utility\Util;
+use Anouk\SanitizeException;
+use Anouk\Util;
 
 $output = [
 	'errors' => [],

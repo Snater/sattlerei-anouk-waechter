@@ -1,6 +1,6 @@
 <?php
 
-use Utility\Util;
+use Anouk\Util;
 
 require_once __DIR__ . DIRECTORY_SEPARATOR . 'init.php';
 
