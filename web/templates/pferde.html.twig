@@ -1,8 +1,10 @@
 {% extends 'html.html.twig' %}
 
-{% block title %}Produkte für Pferde | {% endblock %}
+{% import 'products.html.twig' as products %}
 
-{% block description %}Lederwaren für Pferde: Individuelle Geschirre und Sättel, maßangefertigt und vor Ort angepasst zur bestmöglichen Ausübung des Pferdesports.{% endblock %}
+{% block title %}{{ products.title('Lederwaren für Pferde') }}{% endblock %}
+
+{% block description %}Individuelle Geschirre und Sättel, von der Meistersattlerein maßangefertigt und vor Ort angepasst zur bestmöglichen Ausübung des Pferdesports.{% endblock %}
 
 {% block content %}
 

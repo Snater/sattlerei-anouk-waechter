@@ -1,8 +1,10 @@
 {% extends 'html.html.twig' %}
 
-{% block title %}Produkte für Menschen | {% endblock %}
+{% import 'products.html.twig' as products %}
 
-{% block description %}Lederwaren für Menschen: Individuelle Gürtel, Handtaschen, Ketten, Armbänder und weitere außergewöhnliche Accessoires.{% endblock %}
+{% block title %}{{ products.title('Lederwaren für Menschen') }}{% endblock %}
+
+{% block description %}Individuelle Gürtel, Handtaschen, Ketten, Armbänder und weitere außergewöhnliche Accessoires – von Meisterhand gefertigt.{% endblock %}
 
 {% block content %}
 
