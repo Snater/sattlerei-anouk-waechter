@@ -12,18 +12,26 @@
 
 	<h1>Produkte für Menschen</h1>
 
-	<section id="products-humans">
-		<div class="container">
+	<div class="container products-lead">
 
-			<h2 class="text-center mt-sm-4">Für Menschen</h2>
+		<h2>Gürtel</h2>
 
-			<div class="row">
-				<div class="col-12">
-					Inhalt in Bearbeitung.
-				</div>
-			</div>
-		</div>
-	</section>
+		<p class="lead">
+			Gürtel in verschiedenen Ausführungen jeweils auch kombinierbar mit Leinen, Halsbändern oder Geschirren für Ihren Hund.<br>
+			Auf individuelle Länge gefertigt (5-cm-Schritten), Schnallen in Silber und Messing erhältlich.
+		</p>
+	</div>
+
+	{{ products.set('menschen', 'die_bunten', 'Die Bunten', images) }}
+	{{ products.set('menschen', 'die_exclusiven', 'Die Exclusiven', images, 'left') }}
+
+	<hr class="separator">
+
+	<div class="container products-lead">
+		<h2>Taschen</h2>
+	</div>
+
+	{{ products.set('menschen', 'jagdtasche', 'Jagdtasche', images) }}
 
 </div>
 

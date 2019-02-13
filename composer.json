@@ -12,7 +12,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Anouk\\":"src/"
+            "Anouk\\":"web/src/"
         }
     }
 }

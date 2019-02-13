@@ -50,6 +50,17 @@ a {
 	}
 }
 
+hr {
+	&.separator {
+		border-style: double;
+		border-top-width: 20px;
+	}
+}
+
+.lead {
+	font-style: italic;
+}
+
 .btn-primary {
 	background-color: $color-link-hover;
 	border: none;
@@ -101,6 +112,10 @@ body {
 	width: 100%;
 	z-index: 10;
 
+	@include media-breakpoint-up(sm) {
+		height: 56px;
+	}
+
 	a {
 		color: $black;
 		outline: none;
@@ -113,7 +128,7 @@ body {
 	}
 
 	.navbar-brand {
-		font-weight: 700;
+		font-weight: $font-weight-bold;
 		margin-left: 15px;
 		padding-bottom: 4px;
 		padding-top: 4px;
@@ -125,13 +140,13 @@ body {
 		span {
 			font-family: $font-heading;
 			font-size: 1.6rem;
-			font-weight: normal;
+			font-weight: $font-weight-normal;
 			margin-left: 0.6rem;
 
 			span {
 				font-family: $font-text;
 				font-size: 0.8rem;
-				font-weight: normal;
+				font-weight: $font-weight-normal;
 			}
 		}
 	}
@@ -298,7 +313,7 @@ body {
 		}
 
 		&.active {
-			font-weight: bold;
+			font-weight: $font-weight-bold;
 		}
 	}
 }
@@ -324,7 +339,7 @@ body {
 
 		.btn-lg {
 			padding: 0.75rem 1.25rem;
-			font-weight: 700;
+			font-weight: $font-weight-bold;
 		}
 	}
 }
@@ -504,6 +519,21 @@ section {
 		position: absolute;
 		top: -2px;
 		width: 1px;
+	}
+
+	.products-lead {
+		margin-top: 2rem;
+
+		@include media-breakpoint-up(sm) {
+			margin-top: 5rem;
+		}
+
+		h2 {
+			border-bottom: none;
+			font-family: $font-text;
+			font-weight: $font-weight-light;
+			letter-spacing: .1rem;
+		}
 	}
 
 	h2 {
