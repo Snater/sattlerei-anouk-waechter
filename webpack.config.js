@@ -8,7 +8,7 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 const removeNodeModulesDir = targetPath => targetPath.replace('node_modules/', '/');
 
-module.exports = {
+const config = {
 	mode: 'production',
 	devtool: false,
 	entry: {
@@ -97,4 +97,20 @@ module.exports = {
 			popper: `${__dirname}/node_modules/popper.js/dist/umd/popper.min`,
 		},
 	},
+};
+
+module.exports = (env, argv) => {
+	if (argv.mode === 'development') {
+		config.devtool = 'source-map';
+		config.optimization.minimizer = [
+			new UglifyJsPlugin({
+				cache: true,
+				parallel: true,
+				sourceMap: true
+			}),
+			new OptimizeCSSAssetsPlugin({})
+		]
+	}
+
+	return config;
 };
