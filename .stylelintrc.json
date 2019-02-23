@@ -13,6 +13,7 @@
 		}],
 		"declaration-empty-line-before": "never",
 		"indentation": "tab",
-		"no-descending-specificity": null
+		"no-descending-specificity": null,
+		"property-blacklist": ["font-size"]
 	}
 }

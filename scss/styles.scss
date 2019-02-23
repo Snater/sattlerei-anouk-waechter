@@ -2,16 +2,16 @@
 @import '../node_modules/bootstrap/scss/bootstrap';
 
 h1 {
+	@include font-size(5rem);
 	color: $white;
 	font-family: $font-heading;
-	font-size: 5rem;
 	line-height: 1;
 	margin-bottom: -1rem;
 	text-align: center;
 
 	.small {
+		@include font-size(1.5rem);
 		font-family: $font-text;
-		font-size: 1.5rem;
 		font-weight: inherit;
 	}
 
@@ -25,17 +25,13 @@ h1 {
 }
 
 h2 {
+	@include font-size(3rem);
 	font-family: $font-heading;
-	font-size: 2.5rem;
-
-	@include media-breakpoint-up(md) {
-		font-size: 3rem;
-	}
 }
 
 p {
 	&.quote {
-		font-size: 1rem;
+		@include font-size(1rem);
 		font-style: italic;
 		text-align: center;
 	}
@@ -79,11 +75,10 @@ body {
 
 body {
 	color: $black;
-	font-size: 1rem;
 	padding-top: 48px;
 
 	@include media-breakpoint-up(sm) {
-		font-size: 1.1rem;
+		@include font-size(1.1rem);
 	}
 
 	@include media-breakpoint-up(md) {
@@ -97,7 +92,7 @@ body {
 	}
 
 	@include media-breakpoint-up(xl) {
-		font-size: 1.2rem;
+		@include font-size(1.2rem);
 	}
 }
 
@@ -138,14 +133,14 @@ body {
 		}
 
 		span {
+			@include font-size(1.6rem);
 			font-family: $font-heading;
-			font-size: 1.6rem;
 			font-weight: $font-weight-normal;
 			margin-left: 0.6rem;
 
 			span {
+				@include font-size(0.8rem);
 				font-family: $font-text;
-				font-size: 0.8rem;
 				font-weight: $font-weight-normal;
 			}
 		}
@@ -163,9 +158,9 @@ body {
 	}
 
 	@include media-breakpoint-up(md) {
+		@include font-size(1.5rem);
 		background: transparent;
 		box-shadow: none;
-		font-size: 1.5rem;
 		font-weight: $font-weight-bold;
 		margin-top: 1.5rem;
 		padding: 4px 0;
@@ -187,9 +182,9 @@ body {
 		}
 
 		&.navbar-shrink {
+			@include font-size(1rem);
 			background: white;
 			box-shadow: rgba($black, 0.3) 0 2px 4px;
-			font-size: 1rem;
 			font-weight: $font-weight-normal;
 			margin-top: 0;
 			position: fixed;
@@ -235,8 +230,8 @@ body {
 }
 
 .nav-scroller {
+	@include font-size(1rem);
 	background: rgba($color-secondary, 0.7);
-	font-size: 1rem;
 	position: relative;
 	z-index: 2;
 	height: 2.5rem;
@@ -319,10 +314,10 @@ body {
 }
 
 .cover-container {
+	@include font-size(1.2rem);
 	background: url(../img/090619.jpg) center center;
 	background-size: cover;
 	color: $white;
-	font-size: 1.2rem;
 
 	@include media-breakpoint-up(md) {
 		main {
@@ -499,7 +494,7 @@ section {
 	}
 
 	.fa {
-		font-size: 0.8rem;
+		@include font-size(0.8rem);
 	}
 
 	.contact-info {
