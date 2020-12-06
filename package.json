@@ -14,7 +14,7 @@
 		"type": "git"
 	},
 	"dependencies": {
-		"bootstrap": "^4.5.0",
+		"bootstrap": "^4.5.3",
 		"font-awesome": "^4.7.0",
 		"jquery": "^3.5.1",
 		"jquery.easing": "^1.4.1",
@@ -24,23 +24,23 @@
 		"waypoints": "^4.0.1"
 	},
 	"devDependencies": {
-		"@babel/core": "^7.10.5",
-		"@babel/polyfill": "^7.10.4",
-		"@babel/preset-env": "^7.10.4",
-		"babel-loader": "^8.1.0",
+		"@babel/core": "^7.12.9",
+		"@babel/polyfill": "^7.12.1",
+		"@babel/preset-env": "^7.12.7",
+		"babel-loader": "^8.2.2",
 		"clean-webpack-plugin": "^1.0.1",
-		"copy-webpack-plugin": "^5.1.1",
+		"copy-webpack-plugin": "^5.1.2",
 		"css-loader": "^2.1.1",
 		"mini-css-extract-plugin": "^0.5.0",
 		"node-sass": "^4.14.1",
-		"optimize-css-assets-webpack-plugin": "^5.0.3",
+		"optimize-css-assets-webpack-plugin": "^5.0.4",
 		"sass-loader": "^7.3.1",
-		"stylelint": "^13.6.1",
+		"stylelint": "^13.8.0",
 		"stylelint-config-recommended": "^3.0.0",
 		"stylelint-config-standard": "^20.0.0",
-		"stylelint-webpack-plugin": "^2.1.0",
+		"stylelint-webpack-plugin": "^2.1.1",
 		"uglifyjs-webpack-plugin": "^2.2.0",
-		"webpack": "^4.44.1",
+		"webpack": "^4.44.2",
 		"webpack-cli": "^3.3.12"
 	},
 	"browserslist": [
